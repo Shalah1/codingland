@@ -1,0 +1,213 @@
+ *
+{
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+.full-page
+
+{
+
+    height: 100vh;
+
+    width: 100%;
+
+    background: coral;
+
+    position: absolute;
+
+    background-image: url("coding2.jpg");
+
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+    cursor: pointer;
+}
+
+.logo
+
+{
+
+    position: fixed;
+
+    margin-top: 10px;
+
+}
+
+.logo a
+
+{
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 30px;
+
+}
+
+.col-1
+
+{
+
+    flex-basis: 50%;
+
+    min-width: 300px;
+
+}
+
+.form-box{
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        transform: translate(-50%,-50%);
+        width: 350px;
+        height: 500px;
+        padding: 50px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        background: rgba(0,0,0,.5);
+    }
+.form-box input{
+        width: 100%;
+        margin-bottom: 20px;
+ }
+.form-box input[type="text"],
+.form-box input[type="password"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+::placeholder{
+    color: rgba(255,255,255,.5);
+}
+
+
+.main-heading
+
+{
+
+    color: orangered;
+
+    padding-bottom: 20px;
+
+}
+
+.form
+
+{
+
+	position: relative;
+
+	margin: 0 auto 100px;
+
+	padding: 45px;
+
+    text-align: center;
+
+}
+
+.form input
+
+{
+
+	font-family: sans-serif;
+
+	outline: none;
+
+    border: none;
+
+    border-bottom: 1px solid black;
+
+	width: 100%;
+
+	margin: 0 0 15px;
+
+	padding: 15px;
+
+	font-size: 14px;
+
+}
+
+.form-box input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    background: #ff267e;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.form-box input[type="button"]:hover{
+    background: #efed40;
+    color: #262626;
+}
+
+.form .message
+
+{
+
+    font-size: 12px;
+
+	margin: 15px 0 0;
+
+    color: white;
+
+}
+
+.form .message a
+
+{
+
+	color: orangered;
+
+	text-decoration: none;
+
+}
+
+.form .register-form{
+
+	display: none;
+
+}
+
+.defination
+
+{
+
+    text-align: left;
+
+    font-size: 30px;
+
+    color: black;
+
+    font-family: 'Kaushan Script', cursive;
+
+    padding-left: 60px;
+
+}

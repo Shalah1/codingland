@@ -1,0 +1,2 @@
+A Graph in the data structure can be termed as a data structure consisting of data that is stored among many groups of edges(paths) and vertices (nodes), which are interconnected. 
+Graph data structure (N, E) is structured with a collection of Nodes and Edges. Both nodes and vertices need to be finite.

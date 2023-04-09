@@ -1,0 +1,429 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MidTask
+{
+    //creating structure of date of birth
+    struct DateOFBirth
+    {
+        public byte dateNumber;
+        public string monthName;
+        public int yearNumber;
+
+        /*as we can not create a default constructor for structure thats why we are creating 
+        parameterized constructor*/
+
+        internal DateOFBirth(byte dateNumber, string monthName, int yearNumber)
+        {
+            this.dateNumber = dateNumber;
+            this.monthName = monthName;
+            this.yearNumber = yearNumber;
+        }
+
+        //method for printing custom date
+        internal void ShowDateOfBirthInformation()
+        {
+            Console.Write("Date of birth : ");
+            Console.Write(" {0}", this.dateNumber);
+            Console.Write("th {0}", this.monthName);
+            Console.Write(" {0}", this.yearNumber);
+            Console.WriteLine();
+        }
+    }
+    //creating structure of joining date
+    struct JoiningDate
+    {
+        public byte dateNumber;
+        public string monthName;
+        public int yearNumber;
+
+        /*as we can not create a default constructor for structure thats why we are creating 
+        parameterized constructor*/
+
+        internal JoiningDate(byte dateNumber, string monthName, int yearNumber)
+        {
+            this.dateNumber = dateNumber;
+            this.monthName = monthName;
+            this.yearNumber = yearNumber;
+        }
+        internal void ShowJoiningInformation()
+        {
+            Console.Write("Joining date : ");
+            Console.Write(" {0}", this.dateNumber);
+            Console.Write("th {0}", this.monthName);
+            Console.Write(" {0}", this.yearNumber);
+            Console.WriteLine();
+        }
+    }
+    //creating structure of Address
+    struct Address
+    {
+        public string thana;
+        public string homeDistrict;
+        public int phoneNumber;
+
+        /*as we can not create a default constructor for structure thats why we are creating 
+        parameterized constructor*/
+
+        internal Address(string thana, string homeDistrict, int phoneNumber)
+        {
+            this.thana = thana;
+            this.homeDistrict = homeDistrict;
+            this.phoneNumber = phoneNumber;
+        }
+
+        //method for printing custom date
+        internal void ShowAddressInformation()
+        {
+            Console.WriteLine("Address .. ");
+            Console.WriteLine("Thana :{0}", this.thana);
+            Console.WriteLine("Home district : {0}", this.homeDistrict);
+            Console.WriteLine("Phone Number :{0}", this.phoneNumber);
+        }
+    }
+    class Employee
+    {
+        //fields
+        private string name;
+        private string id;
+        private string bloodGroup;
+        private double monthlySalary;
+        private DateOFBirth birthDate;//custome type
+        private JoiningDate joiningDate;//custome type
+        private Address addressType;
+
+        //default constructor
+        //As we are using one assembly so internal in enough;
+        internal Employee()
+        {
+
+        }
+
+        //properties for each fields
+        internal string Name
+        {
+            get
+            {
+                return this.name;
+            }
+            set
+            {
+                this.name = value;
+            }
+        }
+        internal string Id
+        {//use id varification is needed
+            get
+            {
+                return this.id;
+            }
+            set
+            {
+                this.id = value;
+            }
+        }
+        internal string BloodGroup
+        {
+            get
+            {
+                return this.bloodGroup;
+            }
+            set
+            {
+                this.bloodGroup = value;
+            }
+        }
+        internal double MonthlySalary
+        {
+            get
+            {
+                return this.monthlySalary;
+            }
+            set
+            {
+                this.monthlySalary = value;
+            }
+        }
+        internal DateOFBirth BirthDate
+        {
+            get
+            {
+                return this.birthDate;
+            }
+            set
+            {
+                this.birthDate = value;
+            }
+        }
+        internal JoiningDate propertiesOfJoiningDate
+        {
+            get
+            {
+                return this.joiningDate;
+            }
+            set
+            {
+                this.joiningDate = value;
+            }
+        }
+        internal Address propertiesOfAddress
+        {
+            get
+            {
+                return this.addressType;
+            }
+            set
+            {
+                this.addressType = value;
+            }
+        }
+        //parameterized constructor
+        internal Employee(string name, string id, string bloodgroup, double monthlySalary, DateOFBirth dateOFBirth, JoiningDate joiningDate, Address addressType)
+        {
+            this.Name = name;
+            this.Id = id;
+            this.BloodGroup = bloodgroup;
+            this.MonthlySalary = monthlySalary;
+            this.BirthDate = dateOFBirth;
+            this.propertiesOfJoiningDate = joiningDate;
+            this.propertiesOfAddress = addressType;
+        }
+
+        internal virtual double Income()
+        {
+            return this.MonthlySalary;
+        }
+        //displaying informatins
+        internal virtual void ShowAllInformation()
+        {
+            Console.WriteLine("Name :{0}", this.name);
+            Console.WriteLine("Id : {0}", this.id);
+            Console.WriteLine("Blood-Group :{0}", this.bloodGroup);
+            this.BirthDate.ShowDateOfBirthInformation();
+            this.propertiesOfJoiningDate.ShowJoiningInformation();
+            this.propertiesOfAddress.ShowAddressInformation();
+            Console.WriteLine("Monthly Salary: {0}", this.monthlySalary);
+            Console.WriteLine("Income :{0}",this.Income());
+
+        }
+    }
+}
+
+//======================================================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MidTask
+{
+   
+    class IT_Exexcutive : Employee
+    {
+        //has project bonus
+        private double projectBonus;
+
+        internal double ProjectBonus
+        {
+            get
+            {
+                return this.projectBonus;
+            }
+            set
+            {
+                this.projectBonus = value;
+            }
+        }
+
+        //parameterized constructor
+        internal IT_Exexcutive(string name, string id, string bloodgroup, double monthlySalary, double projectBonus , DateOFBirth dateOFBirth, JoiningDate joiningDate, Address addressType ) : base( name,  id,  bloodgroup,  monthlySalary,  dateOFBirth,  joiningDate,  addressType)
+        {
+            this.ProjectBonus = projectBonus;
+        }
+
+        internal override double Income()
+        {
+            //Console.WriteLine("Project Bonus :{0}", this.projectBonus);
+            return this.ProjectBonus + this.MonthlySalary;
+        }
+        //overriden method()
+        internal override void ShowAllInformation()
+        {
+            base.ShowAllInformation();
+            Console.WriteLine("Project Bonus :{0}",this.projectBonus);
+        }
+    }
+}
+//========================================================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MidTask
+{
+    class HR_Manager : Employee
+    {
+        //has KPI -> key performence indicator
+        private string kpiType;
+
+        //property 
+        internal string KpiType
+        {
+            get
+            {
+                return this.kpiType;
+            }
+            set
+            {
+                this.kpiType = value;
+            }
+        }
+
+        //parameterized construtor
+        internal HR_Manager(string name, string id, string bloodgroup, double monthlySalary, DateOFBirth dateOFBirth, JoiningDate joiningDate, Address addressType , string kpiType) :base (name,  id,  bloodgroup,  monthlySalary,  dateOFBirth,  joiningDate,  addressType)
+        {
+            this.KpiType = kpiType;
+        }
+
+        internal override void ShowAllInformation()
+        {
+            base.ShowAllInformation();
+            Console.WriteLine("Key Performence : {0}",this.kpiType);
+        }
+    }
+}
+//==============================================================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MidTask
+{
+    class Market_Analyst : Employee
+    {
+        //has extra income per month
+        private double extraIncome;
+        
+        //property
+        internal double ExtraIncome
+        {
+            get
+            {
+                return this.extraIncome;
+            }
+            set
+            {
+                this.extraIncome = value;
+            }
+        }
+
+        //parameterized constructor
+        internal Market_Analyst(string name, string id, string bloodgroup, double monthlySalary,double extraIncome , DateOFBirth dateOFBirth, JoiningDate joiningDate, Address addressType) : base ( name,  id,  bloodgroup,  monthlySalary,  dateOFBirth,  joiningDate,  addressType)
+        {
+            this.ExtraIncome = extraIncome;
+        }
+        internal override double Income()
+        {
+            return this.ExtraIncome + this.MonthlySalary;
+        }
+        internal override void ShowAllInformation()
+        {
+            base.ShowAllInformation();
+            Console.WriteLine("Extra income :{0}" , this.extraIncome);
+        }
+    }
+}
+//==================================================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MidTask
+{
+    class Part_Timer : Employee
+    {
+        //As part timer is inherinting every thing from Employee and part timer doesnot have
+        // anything of his/her own so i am creating an paraterized constructor with some fields
+        // and it is calling base class with his fields
+        internal Part_Timer(string name, string id, string bloodgroup, double monthlySalary, DateOFBirth dateOFBirth, JoiningDate joiningDate, Address addressType) : base ( name,  id,  bloodgroup,  monthlySalary,  dateOFBirth,  joiningDate,  addressType)
+        {
+
+        }
+        internal override void ShowAllInformation()
+        {
+            base.ShowAllInformation();
+
+        }
+    }
+}
+//=============================================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MidTask
+{
+    class MainMethod
+    {
+        static void Main(string[] args)
+        {
+            //creating objects
+            DateOFBirth b1 = new DateOFBirth(9,"March",1994);
+            JoiningDate j1 = new JoiningDate(26,"June",2021);
+            Address a1 = new Address("Bandar","Narayeangonj",01798857705);
+
+
+            DateOFBirth b2 = new DateOFBirth(9, "April", 1994);
+            JoiningDate j2 = new JoiningDate(26, "March", 2021);
+            Address a2 = new Address("Chasara", "Narayeangonj", 01798696522);
+
+
+            DateOFBirth b3 = new DateOFBirth(19, "January", 1990);
+            JoiningDate j3 = new JoiningDate(18, "February", 2018);
+            Address a3 = new Address("Fatulla", "Narayeangonj", 01798495358);
+
+
+            DateOFBirth b4 = new DateOFBirth(22, "September", 1990);
+            JoiningDate j4 = new JoiningDate(18, "April", 2010);
+            Address a4 = new Address("Signboard", "Narayeangonj", 01798494398);
+
+            DateOFBirth b5 = new DateOFBirth(02, "December", 1993);
+            JoiningDate j5 = new JoiningDate(16, "October", 2008);
+            Address a5 = new Address("Jajira", "Narayeangonj", 01798491469);
+
+            // Employee em1 = new Employee("Jane","E-101","AB+",50000.0,b1,j1,a1);
+            //em1 = new IT_Exexcutive("Rose", "E-101", "B+", 40000.0, 10000.0,b2, j2, a2);
+
+            Employee[] arr = new Employee[5];
+            arr[0]= new Employee("Jane", "E-101", "AB+", 60000.0, b1, j1, a1);
+            arr[1]= new IT_Exexcutive("Rose", "E-105", "B+", 45000.0, 10000.0, b2, j2, a2);
+            arr[2]= new HR_Manager("Annabelle", "E-107", "AB+", 30000.0, b3, j3, a3 , "Good");
+            arr[3] = new Market_Analyst("Sophia", "E-111", "O+", 30000.0,15000, b4, j4, a4);
+            arr[4] = new Part_Timer("Ellisa", "E-115", "AB-", 25000.0, b5, j5, a5);
+
+            byte index = 0;
+            while (index<arr.Length)
+            {
+                Console.WriteLine("---------------------["+(index+1)+"]------------------------------------");
+                arr[index].ShowAllInformation();
+                Console.WriteLine();
+                index++;
+            }
+
+
+        }
+    }
+}
+
