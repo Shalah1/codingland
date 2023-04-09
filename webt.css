@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(coding.jpg);
+    background-size: cover;
+    font-family: sans-serif;
+}
+
+.names{
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 500px;
+    padding: 50px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+}
+
+h2{
+    margin: 0;
+    padding: 10px 0 20px;
+    color: #efed40;
+    font-size : 200%;
+    
+
+    background: transparent;
+    
+
+    text-align: left;
+}
+
+
+
+.names h2{
+    background: transparent;
+
+}
+
+
+
+
+.names a{
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+}
+

@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(java2.jpg);
+    background-size: cover;
+    font-family: sans-serif;
+}
+.fileuploader input[type="Upload file"]{
+    border: none;
+    /* border-bottom: 1px solid #fff; */
+    /* height: 40px; */
+    color: #fff;
+    font-size: 16px;
+}
+
+
+.fileuploader input
+
+{
+
+	font-family: sans-serif;
+
+	outline: none;
+
+    border: none;
+
+    border-bottom: 1px solid white;
+
+	width: 100%;
+
+	margin: 0 0 15px;
+
+	padding: 15px;
+
+	font-size: 14px;
+
+}
+.fileuploader input[name="Upload file"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    background: #ff267e;
+    cursor: pointer;
+    border-radius: 20px;
+}

@@ -1,0 +1,2 @@
+PHP started out as a small open source project that evolved as more and more people found out how useful it was. Rasmus Lerdorf unleashed the first version of PHP way back in 1994.
+PHP is a general-purpose scripting language especially suited to web development. The PHP reference implementation is now produced by The PHP Group.
